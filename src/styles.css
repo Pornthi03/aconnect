@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+body{
+  font-family: 'Signika Negative', sans-serif;
+  /* background: rgb(8,116,194);
+  background: linear-gradient(180deg, rgba(8,116,194,1) 24%, rgba(192,208,235,1) 100%); */
+}

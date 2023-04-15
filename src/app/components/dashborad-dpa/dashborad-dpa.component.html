@@ -1,0 +1,116 @@
+<div class="w-full h-full">
+  <div class="border-solid border-3 border-white">
+    <div class="grid p-3 mx-1 flex gap-4 lg:gap-0 "> <!-- responsive ด้วย-->
+      <div class="col-12 lg:col-5">
+        <div class="grid flex">
+          <div class="col-12">
+            <p class="text-6xl m-0 text-white">Contact Center Dashboard</p>
+          </div>
+          <div class="col-5 border-solid border-white mx-2">
+            <p class="text-xl text-white m-0 text-center">Date: 27/03/2023</p>
+          </div>
+          <div class="col-5 border-solid border-white mx-2">
+            <p class="text-xl text-white m-0 text-center">Time:16:45 PM.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 lg:col-4 border-solid border-white h-7rem">
+          <p class="text-6xl text-yellow-400 mt-3 text-center">DPA
+          <span class="text-3xl text-white">Project</span></p>
+      </div>
+      <div class="col-12 lg:col-3">
+        <div class="grid flex justify-content-center lg:justify-content-start gap-2 h-7rem lg:ml-4">
+          <div class="col-5 bg-red-500 border-round-3xl h-7rem">
+            <p class="text-2xl text-white m-0 text-center ">In Queue</p>
+            <p class="text-7xl text-white m-0 text-center">0</p>
+          </div>
+        </div>
+      </div>
+    </div>        <!-- responsive ด้วย-->
+    <div class="grid p-3 mx-1 flex justify-content-center gap-4">
+      <div class="col bg-yellow-100 border-round-3xl">
+        <p class="text-2xl mb-0 text-center">Total Calls</p>
+        <p class="text-7xl text-red-500 mt-0 mb-4 text-center">531</p>
+      </div>
+      <div class="col bg-indigo-50 border-round-3xl">
+        <p class="text-2xl mb-0 text-center">Answered Calls</p>
+        <p class="text-7xl text-red-500 mt-0 mb-4 text-center">524</p>
+      </div>
+      <div class="col bg-indigo-50 border-round-3xl">
+        <p class="text-2xl mb-0 text-center">Abandoned Calls</p>
+        <p class="text-7xl text-red-500 mt-0 mb-4 text-center">8</p>
+      </div>
+      <div class="col bg-indigo-50 border-round-3xl">
+        <p class="text-2xl mb-0 text-center">AVG Speed(Mins)</p>
+        <p class="text-7xl text-red-500 mt-0 mb-4 text-center">0.05</p>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col-12 p-0">
+            <p class="text-2xl m-0 text-white text-center border-1 border-solid border-white bg-green-400 py-1">Agent Status</p>
+          </div>
+          <div class="col-6 bg-yellow-100 border-1 border-solid border-white">
+            <p class="m-0 text-center">TOT Login</p>
+            <p class="text-2xl text-blue-600 m-0 text-center">12</p>
+          </div>
+          <div class="col-6 bg-yellow-100 border-1 border-solid border-white">
+            <p class="m-0 text-center">On Calls</p>
+            <p class="text-2xl text-blue-600 m-0 text-center">4</p>
+          </div>
+          <div class="col-6 bg-yellow-100 border-1 border-solid border-white">
+            <p class="m-0 text-center">Available</p>
+            <p class="text-2xl text-blue-600 m-0 text-center">4</p>
+          </div>
+          <div class="col-6 bg-yellow-100 border-1 border-solid border-white">
+            <p class="m-0 text-center">Others</p>
+            <p class="text-2xl text-blue-600 m-0 text-center">4</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="grid p-3 mx-1">
+    <div class="col">
+      <div class="grid flex justify-content-center gap-4">
+        <div class="col bg-yellow-100 border-round-3xl">
+          <p class="text-2xl mb-0 text-center">AHT (Mins)</p>
+          <p class="text-7xl text-red-500 mt-0 mb-3 text-center">3.45</p>
+        </div>
+        <div class="col bg-green-100 border-round-3xl">
+          <p class="text-2xl mb-0 text-center">Service Level in 20s</p>
+          <p class="text-7xl text-red-500 mt-0 mb-3 text-center">98.7%</p>
+        </div>
+        <div class="col bg-green-100 border-round-3xl">
+          <p class="text-2xl mb-0 text-center">Abandon Rate</p>
+          <p class="text-7xl text-red-500 mt-0 mb-3 text-center">1.5%</p>
+        </div>
+        <div class="col bg-white-alpha-50 p-4 " >
+          <div class="card" style="height:13rem;">
+            <p-chart type="line" [data]="data" [options]="options" height="13rem"></p-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-12 lg:col-5 p-0 lg:ml-4">
+      <p-table
+        [columns]="cols"
+        [value]="person"
+        [tableStyle]="{'min-width': '34rem'}"
+        [scrollable]="true"
+        styleClass="p-datatable-sm p-datatable-gridlines"
+      >
+        <ng-template pTemplate="header" let-columns>
+          <th *ngFor="let col of columns">
+            {{ col.header }}
+          </th>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+              <td *ngFor="let col of columns">
+                {{ rowData[col.field] }}
+              </td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
