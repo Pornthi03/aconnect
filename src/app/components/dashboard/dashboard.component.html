@@ -18,8 +18,32 @@
           <p class="text-6xl text-yellow-300 mt-3 text-center">ACONNECT</p>
       </div>
     </div>
-    <div class="grid mx-8 flex">
-      <div class="col">
+    <div class="mx-8">
+      <div class="card mb-4">
+        <p-table [value]="dashboard" [tableStyle]="{ 'min-width': '50rem' }" styleClass="">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="text-blue-600 text-3xl text-center bg-white border-bottom-3 border-gray-500">TODAY</th>
+                    <th class="text-6xl text-yellow-400 text-center bg-white border-bottom-3 border-gray-500">DPA</th>
+                    <th class="text-6xl text-yellow-400 text-center bg-white border-bottom-3 border-gray-500">NCB</th>
+                    <th class="text-6xl text-yellow-400 text-center bg-white border-bottom-3 border-gray-500">Tefal</th>
+                    <th class="text-6xl text-yellow-400 text-center bg-white border-bottom-3 border-gray-500">GLO</th>
+                    <th class="text-6xl text-yellow-400 text-center bg-white border-bottom-3 border-gray-500">DITP</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dashboard let-rowIndex="rowIndex">
+                <tr>
+                    <td class="bg-blue-700 border-white border-1 text-lg text-white text-center">{{ dashboard.today}}</td>
+                    <td [ngClass]="(rowIndex % 2) != 0 ? 'bg-white' : 'bg-blue-100'" class="text-5xl text-primary-600 m-0 text-center font-bold">{{ dashboard.dpa }}</td>
+                    <td [ngClass]="(rowIndex % 2) != 0 ? 'bg-blue-100' : 'bg-white'" class="text-5xl text-primary-600 m-0 text-center font-bold">{{ dashboard.ncb }}</td>
+                    <td [ngClass]="(rowIndex % 2) != 0 ? 'bg-white' : 'bg-blue-100'" class="text-5xl text-primary-600 m-0 text-center font-bold">{{ dashboard.tefal }}</td>
+                    <td [ngClass]="(rowIndex % 2) != 0 ? 'bg-blue-100' : 'bg-white'" class="text-5xl text-primary-600 m-0 text-center font-bold">{{ dashboard.glo }}</td>
+                    <td [ngClass]="(rowIndex % 2) != 0 ? 'bg-white' : 'bg-blue-100'" class="text-5xl text-primary-600 m-0 text-center font-bold">{{ dashboard.ditp }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+      </div>
+      <!--<div class="col">
         <div class="grid flex">
           <div class="col">
             <p class="text-3xl text-primary-600 m-0 mt-3 text-center">TODAY</p>
@@ -185,5 +209,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+</div>
+<div class="w-full h-full">
+
 </div>

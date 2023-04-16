@@ -84,8 +84,8 @@
           <p class="text-7xl text-red-500 mt-0 mb-3 text-center">1.5%</p>
         </div>
         <div class="col bg-white-alpha-50 p-4 " >
-          <div class="card" style="height:13rem;">
-            <p-chart type="line" [data]="data" [options]="options" height="13rem"></p-chart>
+          <div class="card" style="height:15.6rem;">
+            <p-chart type="line" [data]="data" [options]="options" height="15.6rem"></p-chart>
           </div>
         </div>
       </div>
@@ -106,7 +106,12 @@
         <ng-template pTemplate="body" let-rowData let-columns="columns">
             <tr>
               <td *ngFor="let col of columns">
-                {{ rowData[col.field] }}
+                <div class="flex justify-content-start justify-content-between">
+                  {{ rowData[col.field] }}
+                  <i class="pi pi-phone text-red-500" *ngIf = "col.field == 'status' && rowData[col.field] == 'On Calls'"></i>
+                  <i class="pi pi-user text-green-500" *ngIf = "col.field == 'status' && rowData[col.field] == 'Available'"></i>
+                  <i class="pi pi-clock text-primary-400" *ngIf = "col.field == 'status' && rowData[col.field] != 'On Calls' && rowData[col.field] != 'Available'"></i>
+                </div>
               </td>
             </tr>
         </ng-template>

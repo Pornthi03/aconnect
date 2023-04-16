@@ -26,13 +26,14 @@ export class DashboradDPAComponent implements OnInit {
       {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
       {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
       {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
-      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
-      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
-      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
-      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
-      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
-      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
-      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'On Calls'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Available'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Available'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Available'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Available'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Break'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Break'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Meeting'},
+      {extNo: '1001', agentName:'Thanaporn', totCalls: 43, time:'00:13:25', status: 'Training'},
     ]
 
     this.cols = [
@@ -42,6 +43,8 @@ export class DashboradDPAComponent implements OnInit {
       { field: 'time', header: 'Time' },
       { field: 'status', header: 'Status' }
     ];
+
+// -----------------------------------------------chart----------------------------------------------
 
     const documentStyle = getComputedStyle(document.documentElement);
     const textColor = documentStyle.getPropertyValue('--text-color');
